@@ -2,6 +2,7 @@ package hr.cvitas.springbatch.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -11,12 +12,14 @@ public class User {
     private String name;
     private String dept;
     private Integer salary;
+    private Date date;
 
-    public User(Integer id, String name, String dept, Integer salary) {
+    public User(Integer id, String name, String dept, Integer salary, Date date) {
         this.id = id;
         this.name = name;
         this.dept = dept;
         this.salary = salary;
+        this.date = date;
     }
 
     public User() {
@@ -54,6 +57,15 @@ public class User {
         this.salary = salary;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+
     @Override
     public String toString() {
         return "User{" +
@@ -61,6 +73,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", dept='" + dept + '\'' +
                 ", salary=" + salary +
+                ", date=" + date +
                 '}';
     }
 }
